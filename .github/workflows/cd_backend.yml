@@ -39,6 +39,6 @@ jobs:
             sudo docker run -d \
               --name user_backend \
               -p 8080:8080 \
-              -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
+              -e DATABASE_URL='${{ secrets.DATABASE_URL }}' \
               faraz100m/backend:${{ github.sha }}
           "
