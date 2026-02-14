@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -39,5 +39,6 @@ jobs:
             sudo docker run -d \
               --name user_backend \
               -p 8080:8080 \
+              -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
               faraz100m/backend:${{ github.sha }}
           "
