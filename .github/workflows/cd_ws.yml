@@ -23,5 +23,5 @@ jobs:
                   context: .
                   file: docker/Dockerfile.ws
                   push: true
-                  tags: faraz100m/websocket:latest:${{ github.sha}}   
+                  tags: faraz100m/websocket:${{ github.sha}}   
             

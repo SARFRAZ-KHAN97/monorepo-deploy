@@ -25,4 +25,4 @@ jobs:
                   build-args: 
                     DATABASE_URL=${{ secrets.DATABASE_URL }}
                   push: true
-                  tags: faraz100m/frontend:latest:${{ github.sha }}   
+                  tags: faraz100m/frontend:${{ github.sha }}   
