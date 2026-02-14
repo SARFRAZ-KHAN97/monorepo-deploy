@@ -33,10 +33,10 @@ jobs:
           chmod 600 ~/admin.pem
 
           ssh -o StrictHostKeyChecking=no -i ~/admin.pem ubuntu@54.196.159.244 "
-            docker pull faraz100m/backend:${{ github.sha }} &&
-            docker stop user_backend || true &&
-            docker rm user_backend || true &&
-            docker run -d \
+            sudo docker pull faraz100m/backend:${{ github.sha }} &&
+            sudo docker stop user_backend || true &&
+            sudo docker rm user_backend || true &&
+            sudo docker run -d \
               --name user_backend \
               -p 8080:8080 \
               faraz100m/backend:${{ github.sha }}
